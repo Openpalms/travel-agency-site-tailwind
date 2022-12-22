@@ -2,19 +2,27 @@ import React, { useState } from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
+  const handleWindowOpen = () => {
+    setisOpen(!isOpen);
+
+    isOpen
+      ? (document.body.style.overflow = 'scroll')
+      : (document.body.style.overflow = 'hidden');
+  };
   return (
-    <div className="absolute w-full flex justify-between p-4 items-center">
+    <div className="fixed  w-full flex justify-between p-4 items-center z-30">
       <h1 className="text-white font-bold text-2xl z-30">Experiences</h1>
       <HiMenuAlt3
         size={25}
         className="z-30 text-white cursor-pointer"
-        onClick={() => setisOpen(!isOpen)}
+        onClick={handleWindowOpen}
       />
+
       <div
         className={`
       ${
         isOpen
-          ? 'fixed text-gray-300 left-0 top-0 w-full h-screen bg-black/90 px-4 py-7 flex-col z-10 ease-in duration-500'
+          ? 'fixed text-gray-300 left-0 top-0 w-full h-screen bg-black/90 px-4 py-7 flex-col z-10 ease-in duration-500 '
           : 'absolute top-0 h-screen left-[-100%] animate-none ease-out duration-200'
       } 
 
