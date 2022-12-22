@@ -21,7 +21,9 @@ const Hero = () => {
             necessitatibus est illo inventore corrupti dolorum dolore,
             asperiores, commodi cumque?
           </p>
-          <button>Reserve now</button>
+          <button className="bg-white text-black hover:bg-transparent hover:text-white transition-all">
+            Reserve now
+          </button>
         </div>
       </div>
     </div>
